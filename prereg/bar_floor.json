@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "git_commit": "be9337788707e7a05a8067db15882ffce7a14175",
+    "git_dirty": false,
+    "selcert_commit": "a27fe4fd3fd8726f98036cfb3d7d7fe24edd3fdf",
+    "python": "3.11.7",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.7.2",
+      "zstandard": "0.23.0"
+    },
+    "seed": 20261111,
+    "delta": 0.05
+  },
+  "primary_alpha": 0.1,
+  "delta": 0.05,
+  "c_B_points": 9.148936170212766,
+  "aa_abs_gap_p99_points": 10.780851063829786,
+  "FLOOR_points": 10.780851063829786,
+  "BAR_points": 10.780851063829786,
+  "rule": "BAR = min(5, 0.1 * (100 - c_B)); FLOOR = max(2, p99 |A/A gap|); BAR raised to FLOOR if below it"
+}

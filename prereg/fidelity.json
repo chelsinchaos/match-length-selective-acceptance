@@ -1,0 +1,36 @@
+{
+  "provenance": {
+    "git_commit": "aef75e4f76668366345765ec69450b1d5b84a520",
+    "git_dirty": false,
+    "checkpoint": "potsawee/deberta-v3-large-mnli",
+    "revision": "83f4359862aba52c07506cd23d4454db77945b36"
+  },
+  "published": {
+    "nonfact_auc_pr": 92.5,
+    "nonfact_random": 72.96,
+    "factual_auc_pr": 66.08,
+    "factual_random": 27.04,
+    "sentences": 1908
+  },
+  "ours": {
+    "sentences": 1286,
+    "splits": [
+      "TRAIN",
+      "DEV_SELECT",
+      "DEV_CAL",
+      "DEV_TEST"
+    ],
+    "nonfact_share": 74.4945567651633,
+    "nonfact_auc_pr": {
+      "trapezoid": 92.78267973250323,
+      "average_precision": 92.78985839741028
+    },
+    "factual_auc_pr": {
+      "trapezoid": 66.23215437775605,
+      "average_precision": 66.31538579190526
+    }
+  },
+  "criterion": "|ours - published| <= 2.0 points on non-factual AUC-PR (trapezoid)",
+  "difference_points": 0.282679732503226,
+  "within_tolerance": true
+}

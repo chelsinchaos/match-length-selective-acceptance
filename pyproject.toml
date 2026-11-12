@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selfref"
+version = "0.1.0"
+description = "Match-length profile features for selective acceptance of LLM outputs: a pre-registered research harness."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.26", "scipy>=1.11", "zstandard>=0.22"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "hypothesis>=6.100"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# This directory is its own pytest root, so the parent repository's conftest and
+# test configuration are not loaded. Run `python -m pytest` from here.
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+# "." lets an optional add-on package that sits beside src/ be imported by its
+# own tests. No such package is part of a public release.
+pythonpath = ["src", "tests", "."]
+addopts = ["-ra"]

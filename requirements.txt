@@ -1,0 +1,22 @@
+# Versions the Phase 1 suites were run against (Python 3.11.7, macOS 27.0.1 arm64).
+# Install into the harness's own environment with `make venv`.
+#
+# scipy must be 1.17 or later on macOS 27: the 1.15.2 wheel cannot load its
+# compiled extensions there (`import scipy.stats` fails in dyld), and selcert
+# needs scipy.stats.
+#
+# A fully locked environment and a Dockerfile arrive in Phase 5.
+numpy==2.4.6
+scipy==1.17.1
+zstandard==0.23.0
+hypothesis==6.138.7
+pytest==8.4.1
+
+# Phase 2: tables, combiners, and the open groundedness / NLI models.
+pyarrow==18.1.0
+scikit-learn==1.7.2
+torch==2.7.1
+transformers==4.57.3
+sentencepiece==0.2.0
+protobuf==5.29.3
+nltk==3.9.2

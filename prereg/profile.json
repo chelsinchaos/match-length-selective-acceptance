@@ -1,0 +1,762 @@
+{
+  "provenance": {
+    "git_commit": "eb0e2c57c8bd1e1a39511028d0aa5e4cb57f0565",
+    "git_dirty": false,
+    "selcert_commit": "a27fe4fd3fd8726f98036cfb3d7d7fe24edd3fdf",
+    "python": "3.11.7",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.7.2",
+      "zstandard": "0.23.0"
+    },
+    "seed": 20261111,
+    "delta": 0.05
+  },
+  "arms": {
+    "BASELINE+SOURCE": {
+      "arm": "BASELINE+SOURCE",
+      "columns": [
+        "base.len_bytes",
+        "base.len_sentences",
+        "base.len_words",
+        "base.novel_1gram",
+        "base.novel_2gram",
+        "base.novel_3gram",
+        "base.novel_4gram",
+        "base.rougeL_f",
+        "base.rougeL_precision",
+        "base.rougeL_recall",
+        "source.ncd_gzip",
+        "source.ncd_zstd",
+        "gnd.min",
+        "gnd.mean",
+        "gnd.frac_unsupported",
+        "cov.temperature",
+        "cov.model=gpt-3.5-turbo-0613",
+        "cov.model=gpt-4-0613",
+        "cov.model=llama-2-13b-chat",
+        "cov.model=llama-2-70b-chat",
+        "cov.model=llama-2-7b-chat",
+        "cov.model=mistral-7B-instruct",
+        "cov.task=Data2txt",
+        "cov.task=QA",
+        "cov.task=Summary",
+        "source.cov_k1",
+        "source.cov_k1024",
+        "source.cov_k128",
+        "source.cov_k16",
+        "source.cov_k2",
+        "source.cov_k256",
+        "source.cov_k32",
+        "source.cov_k4",
+        "source.cov_k512",
+        "source.cov_k64",
+        "source.cov_k8",
+        "source.lcs",
+        "source.lcs_frac",
+        "source.mlen_entropy",
+        "source.rlz_phrases",
+        "source.rlz_phrases_per_symbol"
+      ],
+      "selected": {
+        "kind": "boosted_trees",
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "max_iter": 100,
+        "min_samples_leaf": 20
+      },
+      "search": [
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4244898301823593
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.42627823972518514
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.42665436593933354
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.42693657604346363
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.42715101532977573
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4275258842014197
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4280922050173443
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.42814932769624753
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.42957886548081536
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4302486435684139
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4314106397374397
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.431535627276866
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.43833442604757694
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4397363435958605
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.44703396845918086
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4478841958506784
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.03
+          },
+          "log_loss_dev_select": 0.4502015863498165
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.1
+          },
+          "log_loss_dev_select": 0.45048530241279094
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.3
+          },
+          "log_loss_dev_select": 0.4507043974045118
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 1.0
+          },
+          "log_loss_dev_select": 0.45122793523334587
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.01
+          },
+          "log_loss_dev_select": 0.45149051163652615
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 3.0
+          },
+          "log_loss_dev_select": 0.45151202376727534
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 10.0
+          },
+          "log_loss_dev_select": 0.451726038602035
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 30.0
+          },
+          "log_loss_dev_select": 0.45177575139446047
+        }
+      ],
+      "model_sha256": "405f199d5e2b192c35320b1326022669d65e7b1500f906bab7892d1586de7fef",
+      "auroc": {
+        "DEV_SELECT": 0.8824369937668244,
+        "DEV_CAL": 0.8993900246033626,
+        "DEV_TEST": 0.9050635245901639
+      },
+      "dev_rehearsal": {
+        "0.01": {
+          "coverage_points": 0.0,
+          "realised_risk": null,
+          "accepted": 0,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": null,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 0.0,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        },
+        "0.05": {
+          "coverage_points": 0.0,
+          "realised_risk": null,
+          "accepted": 0,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": null,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 0.0,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        },
+        "0.1": {
+          "coverage_points": 8.72340425531915,
+          "realised_risk": 0.056910569105691054,
+          "accepted": 123,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": 0.5,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 52.34042553191489,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        }
+      },
+      "sizes": {
+        "TRAIN": {
+          "items": 4482,
+          "groups": 747,
+          "loss_rate": 0.4466755912539045
+        },
+        "DEV_SELECT": {
+          "items": 1428,
+          "groups": 238,
+          "loss_rate": 0.4320728291316527
+        },
+        "DEV_CAL": {
+          "items": 3156,
+          "groups": 526,
+          "loss_rate": 0.4340937896070976
+        },
+        "DEV_TEST": {
+          "items": 1410,
+          "groups": 235,
+          "loss_rate": 0.4326241134751773
+        }
+      },
+      "dev_rehearsal_gain_over_baseline": {
+        "alpha": 0.1,
+        "point": -0.4255319148936163,
+        "low": -12.625886524822697,
+        "high": 1.7730496453900706,
+        "bootstrap_draws": 2000,
+        "note": "DEV rehearsal only. Not a confirmatory result."
+      }
+    },
+    "BASELINE+SELF": {
+      "arm": "BASELINE+SELF",
+      "columns": [
+        "base.len_bytes",
+        "base.len_sentences",
+        "base.len_words",
+        "base.novel_1gram",
+        "base.novel_2gram",
+        "base.novel_3gram",
+        "base.novel_4gram",
+        "base.rougeL_f",
+        "base.rougeL_precision",
+        "base.rougeL_recall",
+        "source.ncd_gzip",
+        "source.ncd_zstd",
+        "gnd.min",
+        "gnd.mean",
+        "gnd.frac_unsupported",
+        "cov.temperature",
+        "cov.model=gpt-3.5-turbo-0613",
+        "cov.model=gpt-4-0613",
+        "cov.model=llama-2-13b-chat",
+        "cov.model=llama-2-70b-chat",
+        "cov.model=llama-2-7b-chat",
+        "cov.model=mistral-7B-instruct",
+        "cov.task=Data2txt",
+        "cov.task=QA",
+        "cov.task=Summary",
+        "self.cov_k1",
+        "self.cov_k1024",
+        "self.cov_k128",
+        "self.cov_k16",
+        "self.cov_k2",
+        "self.cov_k256",
+        "self.cov_k32",
+        "self.cov_k4",
+        "self.cov_k512",
+        "self.cov_k64",
+        "self.cov_k8",
+        "self.lcs",
+        "self.lcs_frac",
+        "self.mlen_entropy",
+        "self.rlz_phrases",
+        "self.rlz_phrases_per_symbol"
+      ],
+      "selected": {
+        "kind": "boosted_trees",
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "max_iter": 100,
+        "min_samples_leaf": 20
+      },
+      "search": [
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4238457552817791
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.42517703309118815
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4283738595247758
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4297876926318132
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4310593216537572
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4310708644835186
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4318101267185689
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4327544615513325
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.43294028994462536
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.4329588246440731
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 3,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4338157634417213
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.43558190112274375
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.4372800372534117
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "max_iter": 300,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.43829920296248903
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 20
+          },
+          "log_loss_dev_select": 0.44998266145805776
+        },
+        {
+          "config": {
+            "kind": "boosted_trees",
+            "learning_rate": 0.05,
+            "max_depth": 2,
+            "max_iter": 100,
+            "min_samples_leaf": 50
+          },
+          "log_loss_dev_select": 0.44998266145805776
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.03
+          },
+          "log_loss_dev_select": 0.4519208787370591
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.1
+          },
+          "log_loss_dev_select": 0.4526170424688319
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.01
+          },
+          "log_loss_dev_select": 0.45308731283391845
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 0.3
+          },
+          "log_loss_dev_select": 0.4531174824225808
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 1.0
+          },
+          "log_loss_dev_select": 0.453550934104683
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 3.0
+          },
+          "log_loss_dev_select": 0.4537924193873326
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 10.0
+          },
+          "log_loss_dev_select": 0.4540880512909855
+        },
+        {
+          "config": {
+            "kind": "logistic",
+            "C": 30.0
+          },
+          "log_loss_dev_select": 0.45427514593435797
+        }
+      ],
+      "model_sha256": "cab8c069e22d4da2284f6425923f13224ada6a6a422f9ee815610c1816f03861",
+      "auroc": {
+        "DEV_SELECT": 0.8819513696398987,
+        "DEV_CAL": 0.89908616081281,
+        "DEV_TEST": 0.9058872950819672
+      },
+      "dev_rehearsal": {
+        "0.01": {
+          "coverage_points": 0.0,
+          "realised_risk": null,
+          "accepted": 0,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": null,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 0.0,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        },
+        "0.05": {
+          "coverage_points": 0.0,
+          "realised_risk": null,
+          "accepted": 0,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": null,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 0.0,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        },
+        "0.1": {
+          "coverage_points": 8.581560283687944,
+          "realised_risk": 0.03305785123966942,
+          "accepted": 121,
+          "thresholds": {
+            "gpt-3.5-turbo-0613": 0.5,
+            "gpt-4-0613": null,
+            "llama-2-13b-chat": null,
+            "llama-2-70b-chat": null,
+            "llama-2-7b-chat": null,
+            "mistral-7B-instruct": null
+          },
+          "coverage_points_by_stratum": {
+            "gpt-3.5-turbo-0613": 51.48936170212765,
+            "gpt-4-0613": 0.0,
+            "llama-2-13b-chat": 0.0,
+            "llama-2-70b-chat": 0.0,
+            "llama-2-7b-chat": 0.0,
+            "mistral-7B-instruct": 0.0
+          }
+        }
+      },
+      "sizes": {
+        "TRAIN": {
+          "items": 4482,
+          "groups": 747,
+          "loss_rate": 0.4466755912539045
+        },
+        "DEV_SELECT": {
+          "items": 1428,
+          "groups": 238,
+          "loss_rate": 0.4320728291316527
+        },
+        "DEV_CAL": {
+          "items": 3156,
+          "groups": 526,
+          "loss_rate": 0.4340937896070976
+        },
+        "DEV_TEST": {
+          "items": 1410,
+          "groups": 235,
+          "loss_rate": 0.4326241134751773
+        }
+      },
+      "dev_rehearsal_gain_over_baseline": {
+        "alpha": 0.1,
+        "point": -0.5673758865248217,
+        "low": -9.929078014184398,
+        "high": 3.9024822695035377,
+        "bootstrap_draws": 2000,
+        "note": "DEV rehearsal only. Not a confirmatory result."
+      }
+    }
+  }
+}

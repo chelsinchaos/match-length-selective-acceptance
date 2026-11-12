@@ -1,0 +1,111 @@
+{
+  "provenance": {
+    "git_commit": "1d297db4117d9c74f67e5f2fb97add5b72f5f494",
+    "git_dirty": false,
+    "selcert_commit": "a27fe4fd3fd8726f98036cfb3d7d7fe24edd3fdf",
+    "python": "3.11.7",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.7.2",
+      "zstandard": "0.23.0"
+    },
+    "seed": 20261111,
+    "delta": 0.05
+  },
+  "alpha": 0.1,
+  "BAR_points": 10.780851063829786,
+  "FLOOR_points": 10.780851063829786,
+  "cal_groups_by_task": {
+    "Summary": 159,
+    "Data2txt": 184,
+    "QA": 161
+  },
+  "test_groups_by_task": {
+    "Summary": 97,
+    "Data2txt": 95,
+    "QA": 72
+  },
+  "population": "DEV_CAL and DEV_TEST, BASELINE ranks and losses",
+  "note": "supplement to power.json at other effect sizes; the gate is read from power.json",
+  "results": [
+    {
+      "target_gain_points": 2.6952127659574465,
+      "multiple_of_BAR": 0.25,
+      "search": {
+        "strength": 0.06640625,
+        "gain": 2.604166666666666,
+        "reachable": true,
+        "below": [
+          0.06640625,
+          2.604166666666666
+        ],
+        "above": [
+          0.0703125,
+          3.0280934343434343
+        ]
+      },
+      "strength": 0.06640625,
+      "replications": 300,
+      "bootstrap_draws": 400,
+      "mean_gain": 3.0391414141414144,
+      "sd_gain": 2.7328543479699356,
+      "p_pass": 0.0,
+      "p_fail": 0.7866666666666666,
+      "p_inconclusive": 0.21333333333333335,
+      "p_interval_above_floor": 0.0
+    },
+    {
+      "target_gain_points": 5.390425531914893,
+      "multiple_of_BAR": 0.5,
+      "search": {
+        "strength": 0.10546875,
+        "gain": 5.316287878787879,
+        "reachable": true,
+        "below": [
+          0.10546875,
+          5.316287878787879
+        ],
+        "above": [
+          0.109375,
+          5.503156565656566
+        ]
+      },
+      "strength": 0.10546875,
+      "replications": 300,
+      "bootstrap_draws": 400,
+      "mean_gain": 5.373526936026936,
+      "sd_gain": 3.311767035252203,
+      "p_pass": 0.0,
+      "p_fail": 0.21333333333333335,
+      "p_inconclusive": 0.7866666666666666,
+      "p_interval_above_floor": 0.0
+    },
+    {
+      "target_gain_points": 8.08563829787234,
+      "multiple_of_BAR": 0.75,
+      "search": {
+        "strength": 0.16796875,
+        "gain": 8.161300505050505,
+        "reachable": true,
+        "below": [
+          0.1640625,
+          7.860795454545454
+        ],
+        "above": [
+          0.16796875,
+          8.161300505050505
+        ]
+      },
+      "strength": 0.16796875,
+      "replications": 300,
+      "bootstrap_draws": 400,
+      "mean_gain": 8.267255892255893,
+      "sd_gain": 3.7847091894794667,
+      "p_pass": 0.0,
+      "p_fail": 0.02,
+      "p_inconclusive": 0.98,
+      "p_interval_above_floor": 0.0
+    }
+  ]
+}

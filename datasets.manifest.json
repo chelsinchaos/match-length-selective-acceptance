@@ -1,0 +1,32 @@
+{
+  "note": "Raw dataset files used by the study. sha256 values are recorded on first fetch (scripts/fetch_data.py --record) and verified on every later fetch and build. Raw files are never committed.",
+  "files": [
+    {
+      "dataset": "ragtruth",
+      "local": "data/raw/ragtruth/response.jsonl",
+      "url": "https://raw.githubusercontent.com/ParticleMedia/RAGTruth/c103204b9ce28d6bbad859304bf30de72b8ed8fe/dataset/response.jsonl",
+      "upstream": "ParticleMedia/RAGTruth @ c103204b9ce28d6bbad859304bf30de72b8ed8fe, dataset/response.jsonl",
+      "licence": "MIT (repository LICENSE)",
+      "bytes": 21458735,
+      "sha256": "e4c2e4ac24fff676d8984cc61c35d791612fadc58015335d97dd632375e18073"
+    },
+    {
+      "dataset": "ragtruth",
+      "local": "data/raw/ragtruth/source_info.jsonl",
+      "url": "https://raw.githubusercontent.com/ParticleMedia/RAGTruth/c103204b9ce28d6bbad859304bf30de72b8ed8fe/dataset/source_info.jsonl",
+      "upstream": "ParticleMedia/RAGTruth @ c103204b9ce28d6bbad859304bf30de72b8ed8fe, dataset/source_info.jsonl",
+      "licence": "MIT (repository LICENSE)",
+      "bytes": 15117971,
+      "sha256": "0dffc26ea9f3c1c3d7c7e8336b56ef1646e3cec876edffcca3c9c624d12d578b"
+    },
+    {
+      "dataset": "wikibio",
+      "local": "data/raw/wikibio/evaluation.parquet",
+      "url": "https://huggingface.co/datasets/potsawee/wiki_bio_gpt3_hallucination/resolve/b3cfb73209a8c51582fa1d9b7fe7e45fec5529b2/data/evaluation-00000-of-00001-e91191b8ff41afbe.parquet",
+      "upstream": "Hugging Face potsawee/wiki_bio_gpt3_hallucination @ b3cfb73209a8c51582fa1d9b7fe7e45fec5529b2",
+      "licence": "CC BY-SA 3.0 (dataset card)",
+      "bytes": 2561507,
+      "sha256": "dc95a59a899ee48deb40c711346b75f05706ae1ebaec4315688e31ae790625fa"
+    }
+  ]
+}

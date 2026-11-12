@@ -1,0 +1,17 @@
+# Pinned third-party checkout (selcert). Fetched by scripts/fetch_selcert.py.
+vendor/
+
+# Raw and derived datasets are never committed. Their SHA-256 values are.
+data/
+
+# Generated benchmark and experiment output. Phase 5 routes numbers through a
+# tracked results.json; until then nothing generated is committed.
+results/
+
+__pycache__/
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+
+# The harness virtual environment (make venv).
+.venv/
