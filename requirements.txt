@@ -10,16 +10,16 @@ numpy==2.4.6
 scipy==1.17.1
 zstandard==0.23.0
 hypothesis==6.138.7
-pytest==8.4.1
+pytest==9.0.3
 
 # Phase 2: tables, combiners, and the open groundedness / NLI models.
-pyarrow==18.1.0
+pyarrow==23.0.1
 scikit-learn==1.7.2
-torch==2.7.1
-transformers==4.57.3
-sentencepiece==0.2.0
-protobuf==5.29.3
-nltk==3.9.2
+torch==2.10.0
+transformers==5.10.1
+sentencepiece==0.2.1
+protobuf==5.29.6
+nltk==3.10.4
 
 # Phase 5: figures of the report.
 matplotlib==3.10.7
