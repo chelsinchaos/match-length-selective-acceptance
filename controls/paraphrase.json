@@ -1,0 +1,362 @@
+{
+ "status": "EXPLORATORY. No label is read; acceptance uses the thresholds of the confirmatory run.",
+ "provenance": {
+  "git_commit": "afcdf98bd1af9c2e1663d644a755e975b27831bb",
+  "git_dirty": false,
+  "paraphrase_model": "microsoft/Phi-3.5-mini-instruct",
+  "paraphrase_model_revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+  "decoding": "greedy",
+  "instruction": "Rewrite the text below in different words. Keep every fact, name, number and date exactly as it is. Do not add anything and do not leave anything out. Reply with the rewritten text only.\n\nText:\n",
+  "sample": "all responses of the first 50 TEST sources in the hash order of salt 'selfref-prereg-v1/paraphrase-sample'"
+ },
+ "alpha": 0.1,
+ "outputs": 300,
+ "paraphrase_fidelity": {
+  "byte_length_ratio": {
+   "mean": 1.085546241719105,
+   "median": 1.0189329212634464
+  },
+  "word_set_jaccard_with_original": {
+   "mean": 0.3940942934064261,
+   "median": 0.3825827205882353
+  },
+  "empty_paraphrases": 0,
+  "identical_to_original": 0
+ },
+ "arms": {
+  "BASELINE": {
+   "risk_score_before": {
+    "mean": 0.501002721150306,
+    "median": 0.44131333543126966
+   },
+   "risk_score_after": {
+    "mean": 0.5672030576969089,
+    "median": 0.5976978556946698
+   },
+   "spearman_before_after": 0.9552430582562027,
+   "accepted_before": 21,
+   "accepted_after": 17,
+   "accepted_both": 16,
+   "coverage_points_before": 7.000000000000001,
+   "coverage_points_after": 5.666666666666666,
+   "by_generator": {
+    "gpt-3.5-turbo-0613": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "gpt-4-0613": {
+     "items": 50,
+     "accepted_before": 21,
+     "accepted_after": 17
+    },
+    "llama-2-13b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-70b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-7b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "mistral-7B-instruct": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    }
+   }
+  },
+  "BASELINE+SOURCE": {
+   "risk_score_before": {
+    "mean": 0.5018051882172552,
+    "median": 0.4495242363695017
+   },
+   "risk_score_after": {
+    "mean": 0.5750641620839477,
+    "median": 0.5847680584421315
+   },
+   "spearman_before_after": 0.9497794419937998,
+   "accepted_before": 21,
+   "accepted_after": 11,
+   "accepted_both": 10,
+   "coverage_points_before": 7.000000000000001,
+   "coverage_points_after": 3.6666666666666665,
+   "by_generator": {
+    "gpt-3.5-turbo-0613": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "gpt-4-0613": {
+     "items": 50,
+     "accepted_before": 21,
+     "accepted_after": 11
+    },
+    "llama-2-13b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-70b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-7b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "mistral-7B-instruct": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    }
+   }
+  },
+  "BASELINE+SELF": {
+   "risk_score_before": {
+    "mean": 0.49678620323365597,
+    "median": 0.43546369317958233
+   },
+   "risk_score_after": {
+    "mean": 0.5652125102459081,
+    "median": 0.5725398253230396
+   },
+   "spearman_before_after": 0.9479776441960466,
+   "accepted_before": 0,
+   "accepted_after": 0,
+   "accepted_both": 0,
+   "coverage_points_before": 0.0,
+   "coverage_points_after": 0.0,
+   "by_generator": {
+    "gpt-3.5-turbo-0613": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "gpt-4-0613": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-13b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-70b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "llama-2-7b-chat": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    },
+    "mistral-7B-instruct": {
+     "items": 50,
+     "accepted_before": 0,
+     "accepted_after": 0
+    }
+   }
+  }
+ },
+ "column_means": {
+  "base.len_bytes": {
+   "before": 6.571497708952144,
+   "after": 6.6127093591027375
+  },
+  "base.len_sentences": {
+   "before": 2.062838212975747,
+   "after": 2.021946742264748
+  },
+  "base.len_words": {
+   "before": 4.787861733043273,
+   "after": 4.765099446208656
+  },
+  "base.novel_1gram": {
+   "before": 0.27197238234892845,
+   "after": 0.41043192433456765
+  },
+  "base.novel_2gram": {
+   "before": 0.6573475210804057,
+   "after": 0.81435736114033
+  },
+  "base.novel_3gram": {
+   "before": 0.7899492070711213,
+   "after": 0.9246152804389726
+  },
+  "base.novel_4gram": {
+   "before": 0.8510699153520714,
+   "after": 0.9620459392712182
+  },
+  "base.rougeL_f": {
+   "before": 0.20084603142880256,
+   "after": 0.15546232655991632
+  },
+  "base.rougeL_precision": {
+   "before": 0.443710374585224,
+   "after": 0.342228420073472
+  },
+  "base.rougeL_recall": {
+   "before": 0.14024664796337502,
+   "after": 0.106788527969485
+  },
+  "self.cov_k1": {
+   "before": 0.9301495909810726,
+   "after": 0.9381551311594569
+  },
+  "self.cov_k1024": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "self.cov_k128": {
+   "before": 0.0009694757849708593,
+   "after": 0.0
+  },
+  "self.cov_k16": {
+   "before": 0.053630642791556785,
+   "after": 0.03224420514382378
+  },
+  "self.cov_k2": {
+   "before": 0.7902924946010469,
+   "after": 0.8016798298284679
+  },
+  "self.cov_k256": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "self.cov_k32": {
+   "before": 0.01170075900411363,
+   "after": 0.006076420800293597
+  },
+  "self.cov_k4": {
+   "before": 0.40312355128397326,
+   "after": 0.3633289125637775
+  },
+  "self.cov_k512": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "self.cov_k64": {
+   "before": 0.002924602876594732,
+   "after": 0.0010862613371857433
+  },
+  "self.cov_k8": {
+   "before": 0.1701007061708684,
+   "after": 0.11966699455945198
+  },
+  "self.lcs": {
+   "before": 2.9887075045923743,
+   "after": 2.875933904532266
+  },
+  "self.lcs_frac": {
+   "before": 0.029706049348231466,
+   "after": 0.024800181244195415
+  },
+  "self.mlen_entropy": {
+   "before": 2.0729040775473675,
+   "after": 2.2523833007605414
+  },
+  "self.rlz_phrases": {
+   "before": 5.8275422951200415,
+   "after": 5.903358080202062
+  },
+  "self.rlz_phrases_per_symbol": {
+   "before": 0.4839669230806373,
+   "after": 0.49609491051655313
+  },
+  "source.cov_k1": {
+   "before": 0.9977158614212236,
+   "after": 0.9971038379531645
+  },
+  "source.cov_k1024": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "source.cov_k128": {
+   "before": 0.01094197281420862,
+   "after": 0.0
+  },
+  "source.cov_k16": {
+   "before": 0.31261443995123045,
+   "after": 0.13856566845129667
+  },
+  "source.cov_k2": {
+   "before": 0.9896043891575349,
+   "after": 0.9862410782553004
+  },
+  "source.cov_k256": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "source.cov_k32": {
+   "before": 0.15561111114645979,
+   "after": 0.033673859307085004
+  },
+  "source.cov_k4": {
+   "before": 0.8464558107636772,
+   "after": 0.7410796624282265
+  },
+  "source.cov_k512": {
+   "before": 0.0,
+   "after": 0.0
+  },
+  "source.cov_k64": {
+   "before": 0.03966849857857074,
+   "after": 0.0030550308693721145
+  },
+  "source.cov_k8": {
+   "before": 0.5542331477670586,
+   "after": 0.3687632956580933
+  },
+  "source.lcs": {
+   "before": 3.7207379574283004,
+   "after": 3.35913552616006
+  },
+  "source.lcs_frac": {
+   "before": 0.09411462804957682,
+   "after": 0.046868192096924235
+  },
+  "source.mlen_entropy": {
+   "before": 1.3997493984735545,
+   "after": 1.8803115056624604
+  },
+  "source.ncd_gzip": {
+   "before": 0.8346269265114102,
+   "after": 0.8735458144156333
+  },
+  "source.ncd_zstd": {
+   "before": 0.8311541846132021,
+   "after": 0.8694273688556039
+  },
+  "source.rlz_phrases": {
+   "before": 4.872845534926845,
+   "after": 5.267778633215865
+  },
+  "source.rlz_phrases_per_symbol": {
+   "before": 0.19577326174330337,
+   "after": 0.26307833971533334
+  },
+  "gnd.min": {
+   "before": 0.19340040333333333,
+   "after": 0.11950769666666666
+  },
+  "gnd.mean": {
+   "before": 0.5866684205510044,
+   "after": 0.49409521246410626
+  },
+  "gnd.frac_unsupported": {
+   "before": 0.3841690304828149,
+   "after": 0.4919215705914699
+  }
+ }
+}

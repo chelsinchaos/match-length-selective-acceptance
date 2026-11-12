@@ -19,7 +19,9 @@ PUBLIC_DIRS = ("src", "tests", "bench", "scripts")
 PUBLIC_TOP_LEVEL = ("README.md", "REFERENCES.md", "PREREGISTRATION.md", "DEVIATIONS.md",
                     "RUNLEDGER.md",
                     "datasets.manifest.json", "pyproject.toml", "requirements.txt",
-                    "LICENSE", ".gitignore")
+                    "requirements.lock", "Dockerfile", "REPORT.md", "results.json",
+                    "LICENSE", ".gitignore", "paper/paper.template.tex", "paper/paper.tex",
+                    "HISTORY.md")
 
 # Identifiers that would describe proprietary internals. Assembled from parts so
 # that this file does not itself contain them.
@@ -76,3 +78,23 @@ def test_the_makefile_touches_the_private_tree_only_through_one_optional_include
     lines = [line for line in (HARNESS / "Makefile").read_text(encoding="utf-8").splitlines()
              if any(word in line for word in PRIVATE_IDENTIFIERS)]
     assert lines == ["-include " + "fastcodec" + "_backend/private.mk"]
+
+
+def test_no_measurement_of_the_private_backend_is_published():
+    """The owner decided not to publish the proprietary backend's measurements
+    (DEVIATIONS.md). Neither the record file nor the report may carry them."""
+    import json
+    results, report = HARNESS / "results.json", HARNESS / "REPORT.md"
+    if not (results.exists() and report.exists()):
+        pytest.skip("the report has not been written yet")
+    records = json.loads(results.read_text())["records"]
+    assert not [name for name in records if "second_backend" in name]
+    assert "second_backend" not in results.read_text()
+    text = report.read_text()
+    assert "s/MB" not in "".join(line for line in text.splitlines() if "second backend" in line.lower())
+    # the section on the second backend states that the comparison was run, and gives no figure
+    section = text.split("### 3.12 Second backend", 1)[1].split("\n### ", 1)[0]
+    import re
+    assert not re.search(r"\d", re.sub(r"Section \d+(\.\d+)?", "", section)), section
+    assert "not published" in section
+

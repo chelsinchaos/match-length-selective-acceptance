@@ -30,12 +30,16 @@ from selfref.experiment import Sample
 from selfref.groundedness import summarise_support
 from selfref.splits import SEALED
 
-__all__ = ["LOG_COLUMNS", "SealedSplitError", "Table", "load_ragtruth_split", "categories_of"]
+__all__ = ["LOG_COLUMNS", "COUNT_SUFFIXES", "SealedSplitError", "Table", "load_ragtruth_split",
+           "categories_of", "extra_columns"]
 
 #: Columns passed through log(1 + x).
 LOG_COLUMNS = ("base.len_bytes", "base.len_words", "base.len_sentences",
                "self.rlz_phrases", "self.lcs", "source.rlz_phrases", "source.lcs",
                "resample.rlz_phrases", "resample.lcs")
+
+#: In a supplementary table, a column with one of these endings is a count.
+COUNT_SUFFIXES = (".rlz_phrases", ".lcs")
 
 
 class SealedSplitError(RuntimeError):
@@ -130,3 +134,24 @@ def load_ragtruth_split(derived: Path, split: str, categories: Mapping[str, Sequ
         stratum=np.array([items[i]["model"] for i in ids]),
         group=np.array([items[i]["group"] for i in ids]),
         block=np.array([items[i]["task_type"] for i in ids]))
+
+
+def extra_columns(derived: Path, kind: str, split: str, ids: Sequence[str]):
+    """Columns of a supplementary label-free score table, in the order of ``ids``.
+
+    The table is ``features_<kind>_<SPLIT>.npz``, written by
+    ``scripts/compute_control_features.py``. It must hold exactly the items
+    asked for. Counts get the same log(1 + x) as in the main table. Returns the
+    column names and the matrix.
+    """
+    stored = np.load(Path(derived) / f"features_{kind}_{split}.npz")
+    stored_ids = [str(i) for i in stored["ids"]]
+    if set(stored_ids) != set(ids) or len(stored_ids) != len(ids):
+        raise ValueError(f"{split}: the {kind} table and the item list hold different items")
+    names = [str(n) for n in stored["names"]]
+    row = {item_id: k for k, item_id in enumerate(stored_ids)}
+    X = np.array(stored["X"], dtype=float)[[row[i] for i in ids]]
+    for k, name in enumerate(names):
+        if name.endswith(COUNT_SUFFIXES):
+            X[:, k] = np.log1p(X[:, k])
+    return names, X

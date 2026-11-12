@@ -39,9 +39,12 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("dataset", choices=["ragtruth", "wikibio"])
     parser.add_argument("--splits", nargs="+", required=True)
+    parser.add_argument("--derived", type=Path, default=None,
+                        help="another derived directory with the same layout "
+                             "(default: data/derived/<dataset>)")
     args = parser.parse_args(argv)
 
-    derived = HARNESS / "data" / "derived" / args.dataset
+    derived = args.derived or HARNESS / "data" / "derived" / args.dataset
     sources = {}
     for line in open(derived / "sources.jsonl", encoding="utf-8"):
         record = json.loads(line)

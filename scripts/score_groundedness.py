@@ -30,12 +30,15 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("dataset", choices=["ragtruth"])
     parser.add_argument("--splits", nargs="+", required=True)
+    parser.add_argument("--derived", type=Path, default=None,
+                        help="another derived directory with the same layout "
+                             "(default: data/derived/<dataset>)")
     parser.add_argument("--limit", type=int, default=None, help="stop after this many new items")
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--device", default=None)
     args = parser.parse_args(argv)
 
-    derived = HARNESS / "data" / "derived" / args.dataset
+    derived = args.derived or HARNESS / "data" / "derived" / args.dataset
     items = [json.loads(line) for line in open(derived / "items.jsonl", encoding="utf-8")]
     items = [item for item in items if item["split"] in set(args.splits)]
     sources = {}

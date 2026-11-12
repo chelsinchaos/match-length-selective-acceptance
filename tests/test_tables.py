@@ -124,3 +124,24 @@ def test_sealed_labels_must_cover_every_item_of_the_split(derived):
     (derived / "groundedness.jsonl").write_text(lines + json.dumps({"id": "9", "support": [0.8]}) + "\n")
     with pytest.raises(KeyError):
         load_ragtruth_split(derived, "CAL", CATEGORIES, sealed_labels={"other": {"loss": 1}})
+
+
+# ------------------------------------------------- supplementary score tables
+
+def test_extra_columns_follow_the_order_of_the_ids_asked_for(derived):
+    from selfref.tables import extra_columns
+    np.savez_compressed(derived / "features_tokens_TRAIN.npz", ids=np.array(["3", "1", "2"]),
+                        names=np.array(["tok.source.cov_k1", "tok.source.lcs"]),
+                        X=np.array([[0.3, 7.0], [0.1, 0.0], [0.2, 3.0]]))
+    names, X = extra_columns(derived, "tokens", "TRAIN", ["1", "2", "3"])
+    assert names == ["tok.source.cov_k1", "tok.source.lcs"]
+    assert X[:, 0].tolist() == [0.1, 0.2, 0.3]
+    assert X[:, 1].tolist() == pytest.approx([0.0, math.log1p(3.0), math.log1p(7.0)])   # counts are logged
+
+
+def test_extra_columns_must_cover_exactly_the_items_asked_for(derived):
+    from selfref.tables import extra_columns
+    np.savez_compressed(derived / "features_tokens_TRAIN.npz", ids=np.array(["1", "2"]),
+                        names=np.array(["tok.source.cov_k1"]), X=np.array([[0.1], [0.2]]))
+    with pytest.raises(ValueError, match="different items"):
+        extra_columns(derived, "tokens", "TRAIN", ["1", "2", "3"])

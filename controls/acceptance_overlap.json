@@ -1,0 +1,145 @@
+{
+ "status": "EXPLORATORY. No label is read; acceptance uses the thresholds recorded by the controls run.",
+ "provenance": {
+  "git_commit": "14539cc71fd97103074da34347e99fbfe7734935",
+  "git_dirty": false,
+  "thresholds_from": "controls/result.json",
+  "thresholds_computed_at_commit": "688893df210119af81652ecfed7a344b25c64b5f"
+ },
+ "alpha": 0.1,
+ "test_items": 1584,
+ "arms": {
+  "BASELINE": {
+   "accepted": 140,
+   "realised_risk_in_the_record": 0.07142857142857142,
+   "thresholds": {
+    "gpt-3.5-turbo-0613": null,
+    "gpt-4-0613": 0.55,
+    "llama-2-13b-chat": null,
+    "llama-2-70b-chat": null,
+    "llama-2-7b-chat": null,
+    "mistral-7B-instruct": null
+   }
+  },
+  "BASELINE+SOURCE": {
+   "accepted": 127,
+   "realised_risk_in_the_record": 0.07874015748031496,
+   "thresholds": {
+    "gpt-3.5-turbo-0613": null,
+    "gpt-4-0613": 0.5,
+    "llama-2-13b-chat": null,
+    "llama-2-70b-chat": null,
+    "llama-2-7b-chat": null,
+    "mistral-7B-instruct": null
+   }
+  },
+  "SOURCE only": {
+   "accepted": 127,
+   "realised_risk_in_the_record": 0.07874015748031496,
+   "thresholds": {
+    "gpt-3.5-turbo-0613": null,
+    "gpt-4-0613": 0.5,
+    "llama-2-13b-chat": null,
+    "llama-2-70b-chat": null,
+    "llama-2-7b-chat": null,
+    "mistral-7B-instruct": null
+   }
+  },
+  "BASELINE+SOURCE (tokens)": {
+   "accepted": 125,
+   "realised_risk_in_the_record": 0.072,
+   "thresholds": {
+    "gpt-3.5-turbo-0613": null,
+    "gpt-4-0613": 0.5,
+    "llama-2-13b-chat": null,
+    "llama-2-70b-chat": null,
+    "llama-2-7b-chat": null,
+    "mistral-7B-instruct": null
+   }
+  },
+  "BASELINE+SELF (tokens)": {
+   "accepted": 132,
+   "realised_risk_in_the_record": 0.06818181818181818,
+   "thresholds": {
+    "gpt-3.5-turbo-0613": null,
+    "gpt-4-0613": 0.5,
+    "llama-2-13b-chat": null,
+    "llama-2-70b-chat": null,
+    "llama-2-7b-chat": null,
+    "mistral-7B-instruct": null
+   }
+  }
+ },
+ "pairs": [
+  {
+   "first": "BASELINE",
+   "second": "BASELINE+SOURCE",
+   "accepted_first": 140,
+   "accepted_second": 127,
+   "accepted_both": 125
+  },
+  {
+   "first": "BASELINE",
+   "second": "SOURCE only",
+   "accepted_first": 140,
+   "accepted_second": 127,
+   "accepted_both": 114
+  },
+  {
+   "first": "BASELINE",
+   "second": "BASELINE+SOURCE (tokens)",
+   "accepted_first": 140,
+   "accepted_second": 125,
+   "accepted_both": 124
+  },
+  {
+   "first": "BASELINE",
+   "second": "BASELINE+SELF (tokens)",
+   "accepted_first": 140,
+   "accepted_second": 132,
+   "accepted_both": 130
+  },
+  {
+   "first": "BASELINE+SOURCE",
+   "second": "SOURCE only",
+   "accepted_first": 127,
+   "accepted_second": 127,
+   "accepted_both": 112
+  },
+  {
+   "first": "BASELINE+SOURCE",
+   "second": "BASELINE+SOURCE (tokens)",
+   "accepted_first": 127,
+   "accepted_second": 125,
+   "accepted_both": 118
+  },
+  {
+   "first": "BASELINE+SOURCE",
+   "second": "BASELINE+SELF (tokens)",
+   "accepted_first": 127,
+   "accepted_second": 132,
+   "accepted_both": 121
+  },
+  {
+   "first": "SOURCE only",
+   "second": "BASELINE+SOURCE (tokens)",
+   "accepted_first": 127,
+   "accepted_second": 125,
+   "accepted_both": 106
+  },
+  {
+   "first": "SOURCE only",
+   "second": "BASELINE+SELF (tokens)",
+   "accepted_first": 127,
+   "accepted_second": 132,
+   "accepted_both": 111
+  },
+  {
+   "first": "BASELINE+SOURCE (tokens)",
+   "second": "BASELINE+SELF (tokens)",
+   "accepted_first": 125,
+   "accepted_second": 132,
+   "accepted_both": 123
+  }
+ ]
+}

@@ -191,3 +191,13 @@ def test_the_rank_transform_comes_from_dev_select_not_from_the_calibration_split
     assert out["thresholds"] == {"g": pytest.approx(0.85)}
     assert out["accepted"] == 2 and out["coverage_points"] == pytest.approx(50.0)
     assert out["realised_risk"] == 0.0
+
+
+def test_the_search_can_be_restricted_to_part_of_the_space(data):
+    from selfref.combiner import LOGISTIC_SPACE
+    assert len(LOGISTIC_SPACE) == 8 and all(c.kind == "logistic" for c in LOGISTIC_SPACE)
+    assert all(c in SEARCH_SPACE for c in LOGISTIC_SPACE)
+    selection = fit_and_select(data["TRAIN"].X, data["TRAIN"].loss, data["DEV_SELECT"].X,
+                               data["DEV_SELECT"].loss, seed=1, space=LOGISTIC_SPACE)
+    assert selection.config.kind == "logistic" and len(selection.table) == 8
+    assert selection.table[0]["log_loss"] == min(row["log_loss"] for row in selection.table)

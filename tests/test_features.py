@@ -85,6 +85,17 @@ def test_rlz_hand_worked_example():
     assert rlz_phrase_count([3, 2, 1, 0, 1]) == 3
 
 
+def test_rlz_reproduces_the_worked_example_of_the_1993_article():
+    """Ziv and Merhav (1993), Section II, p. 1271: with z = 01111000110 and
+    x = 10010100110, "parsing z with respect to x yields: (011, 110, 00110)".
+    The article prints the count beside it as 2; the phrases it lists are three."""
+    z, x = b"01111000110", b"10010100110"
+    lengths = rlz_phrases(match_length_profile(z, [x]))
+    cuts = [sum(lengths[:k]) for k in range(len(lengths) + 1)]
+    assert [z[a:b] for a, b in zip(cuts, cuts[1:])] == [b"011", b"110", b"00110"]
+    assert rlz_phrase_count(match_length_profile(z, [x])) == 3
+
+
 def test_rlz_is_one_phrase_when_target_equals_reference():
     assert rlz_phrase_count([5, 4, 3, 2, 1]) == 1
 

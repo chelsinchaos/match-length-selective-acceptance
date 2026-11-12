@@ -1,0 +1,107 @@
+{
+ "provenance": {
+  "git_commit": "4e14e416c2f1a423ee17578ca14627ec1a464418",
+  "git_dirty": false,
+  "machine": "arm64",
+  "processor": "arm",
+  "python": "3.11.7",
+  "threads": 1
+ },
+ "megabyte": "one megabyte of input: the output plus its source (or its samples)",
+ "cpu_scores": {
+  "sample": "first 200 RAGTruth TRAIN responses in the hash order of salt 'selfref-prereg-v1/runtime-sample'",
+  "items": 200,
+  "megabytes": 0.68427,
+  "passes_per_score": 3,
+  "reported": "the fastest pass",
+  "scores": {
+   "SELF profile features (16 columns)": {
+    "seconds": 0.20862670917995274,
+    "passes": [
+     0.21453333413228393,
+     0.20862670917995274,
+     0.21072537498548627
+    ],
+    "seconds_per_megabyte": 0.30488945764092057
+   },
+   "SOURCE profile features (16 columns)": {
+    "seconds": 0.36054858285933733,
+    "passes": [
+     0.3610451251734048,
+     0.364571041893214,
+     0.36054858285933733
+    ],
+    "seconds_per_megabyte": 0.5269098204792513
+   },
+   "SOURCE and SELF profile features over word tokens": {
+    "seconds": 0.10770179214887321,
+    "passes": [
+     0.10770179214887321,
+     0.10811145906336606,
+     0.10841745883226395
+    ],
+    "seconds_per_megabyte": 0.15739663020280475
+   },
+   "NCD, gzip": {
+    "seconds": 0.027297750115394592,
+    "passes": [
+     0.027479249984025955,
+     0.027297750115394592,
+     0.027525292010977864
+    ],
+    "seconds_per_megabyte": 0.03989324406359272
+   },
+   "NCD, zstd": {
+    "seconds": 0.14842991577461362,
+    "passes": [
+     0.1485136658884585,
+     0.14842991577461362,
+     0.14945308305323124
+    ],
+    "seconds_per_megabyte": 0.21691717563916818
+   },
+   "lexical baselines (length, n-gram novelty, ROUGE-L)": {
+    "seconds": 0.16372595797292888,
+    "passes": [
+     0.16441725008189678,
+     0.16372595797292888,
+     0.16754779196344316
+    ],
+    "seconds_per_megabyte": 0.23927098655929513
+   },
+   "ROUGE-L alone": {
+    "seconds": 0.10586570808663964,
+    "passes": [
+     0.10663858405314386,
+     0.10586570808663964,
+     0.10589366708882153
+    ],
+    "seconds_per_megabyte": 0.15471335596568553
+   }
+  }
+ },
+ "neural_baselines": {
+  "MiniCheck groundedness, RAGTruth CAL and TEST, first run": {
+   "status": "the log stops at 4000 of 4608 items",
+   "log": "groundedness_ragtruth_sealed.log"
+  },
+  "MiniCheck groundedness, RAGTruth CAL and TEST, resumed run": {
+   "items": 583,
+   "items_in_the_splits": 4608,
+   "megabytes": 2.083418,
+   "seconds": 882,
+   "seconds_per_megabyte": 423.34279534879704,
+   "log": "groundedness_ragtruth_sealed_resumed.log",
+   "device": "mps"
+  },
+  "SelfCheck-NLI, WikiBio TEST": {
+   "items": 197,
+   "items_in_the_splits": 197,
+   "megabytes": 3.482121,
+   "seconds": 270,
+   "seconds_per_megabyte": 77.53894824447514,
+   "log": "selfcheck_wikibio_sealed.log",
+   "device": "mps"
+  }
+ }
+}

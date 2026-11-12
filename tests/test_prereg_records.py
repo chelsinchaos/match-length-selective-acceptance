@@ -105,6 +105,10 @@ def test_the_tested_arms_were_fitted_after_bar_and_floor_were_committed():
     if last_change.returncode != 0 or not last_change.stdout.strip():
         pytest.skip("no git history here to check the order of the commits against")
     assert stamp["git_dirty"] is False
+    exists = subprocess.run(["git", "-C", harness, "cat-file", "-e", stamp["git_commit"] + "^{commit}"],
+                            capture_output=True)
+    if exists.returncode != 0:
+        pytest.skip("this tree is an export: the commits its records name are in the study's repository")
     is_ancestor = subprocess.run(["git", "-C", harness, "merge-base", "--is-ancestor",
                                   last_change.stdout.strip(), stamp["git_commit"]])
     assert is_ancestor.returncode == 0, "BAR and FLOOR changed after the tested arms were fitted"

@@ -1,0 +1,205 @@
+{
+  "mode": "confirmatory",
+  "provenance": {
+    "git_commit": "d0cf94010ca8f7f4d2f842f2a9347041aecb73c5",
+    "git_dirty_before_run": false,
+    "selcert_commit": "a27fe4fd3fd8726f98036cfb3d7d7fe24edd3fdf",
+    "seed": 20261121,
+    "ledger_entries": [
+      {
+        "number": 1,
+        "time": "2026-11-12T14:33:03Z",
+        "split": "CAL",
+        "access_number": 1,
+        "commit": "d0cf94010ca8f7f4d2f842f2a9347041aecb73c5",
+        "purpose": "confirmatory run"
+      },
+      {
+        "number": 2,
+        "time": "2026-11-12T14:33:03Z",
+        "split": "TEST",
+        "access_number": 1,
+        "commit": "d0cf94010ca8f7f4d2f842f2a9347041aecb73c5",
+        "purpose": "confirmatory run"
+      }
+    ],
+    "test_accesses_so_far": 1,
+    "cal_accesses_so_far": 1
+  },
+  "primary_alpha": 0.1,
+  "delta": 0.05,
+  "BAR_points": 10.780851063829786,
+  "FLOOR_points": 10.780851063829786,
+  "coverage": {
+    "BASELINE": {
+      "0.01": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.05": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.1": {
+        "coverage_points": 8.83838383838384,
+        "realised_risk": 0.07142857142857142,
+        "accepted": 140,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": 0.55,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      }
+    },
+    "BASELINE+SOURCE": {
+      "0.01": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.05": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.1": {
+        "coverage_points": 8.017676767676768,
+        "realised_risk": 0.07874015748031496,
+        "accepted": 127,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": 0.5,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      }
+    },
+    "BASELINE+SELF": {
+      "0.01": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.05": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      },
+      "0.1": {
+        "coverage_points": 0.0,
+        "realised_risk": null,
+        "accepted": 0,
+        "thresholds": {
+          "gpt-3.5-turbo-0613": null,
+          "gpt-4-0613": null,
+          "llama-2-13b-chat": null,
+          "llama-2-70b-chat": null,
+          "llama-2-7b-chat": null,
+          "mistral-7B-instruct": null
+        }
+      }
+    }
+  },
+  "hypotheses": {
+    "H2": {
+      "outcome": "NOT TESTABLE",
+      "reason": "no certificate is attainable on its dataset at any pre-specified alpha",
+      "p_gain_at_most_floor": 1.0
+    },
+    "H1": {
+      "tested_arm": "BASELINE+SOURCE",
+      "alpha": 0.1,
+      "gain_points": -0.8207070707070709,
+      "interval_low": -9.280303030303031,
+      "interval_high": 8.207070707070708,
+      "bootstrap_draws": 10000,
+      "p_gain_at_most_floor": 0.9948,
+      "outcome": "FAIL"
+    },
+    "H3": {
+      "tested_arm": "BASELINE+SELF",
+      "alpha": 0.1,
+      "gain_points": -8.83838383838384,
+      "interval_low": -9.154040404040405,
+      "interval_high": 9.471275252525231,
+      "bootstrap_draws": 10000,
+      "p_gain_at_most_floor": 0.9904,
+      "outcome": "FAIL",
+      "p_holm": 1.0,
+      "supported": false
+    }
+  },
+  "secondary_family": [
+    "H2",
+    "H3"
+  ],
+  "sizes": {
+    "select": {
+      "items": 1428,
+      "groups": 238
+    },
+    "cal": {
+      "items": 3024,
+      "groups": 504
+    },
+    "test": {
+      "items": 1584,
+      "groups": 264
+    }
+  }
+}

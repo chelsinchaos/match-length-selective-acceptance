@@ -1,0 +1,395 @@
+{
+ "mode": "rehearsal",
+ "test_split": "DEV_TEST",
+ "provenance": {
+  "git_commit": "2ed4f5db8e7534235aab7509712e0f5374735c27",
+  "git_dirty_before_run": false,
+  "seeds": {
+   "fit": 20261111,
+   "bootstrap": 20261132
+  },
+  "bootstrap_draws": 10000,
+  "ledger_entries": [],
+  "test_accesses_so_far": 0
+ },
+ "h2_status": "NOT TESTABLE under the decision rule; this ranking analysis does not change that",
+ "sizes": {
+  "train_sentences": 594,
+  "select_sentences": 143,
+  "test_sentences": 223,
+  "test_passages": 25,
+  "test_error_rate": 0.8161434977578476
+ },
+ "arms": {
+  "baseline": {
+   "columns": [
+    "base.len_bytes",
+    "base.len_sentences",
+    "base.len_words",
+    "base.novel_1gram",
+    "base.novel_2gram",
+    "base.novel_3gram",
+    "base.novel_4gram",
+    "base.rougeL_f",
+    "base.rougeL_precision",
+    "base.rougeL_recall",
+    "base.position",
+    "resample.ncd_gzip",
+    "resample.ncd_zstd",
+    "sc.nli"
+   ],
+   "selected": {
+    "kind": "logistic",
+    "C": 30.0
+   },
+   "log_loss_dev_select": 0.33819397126967593,
+   "auroc": 0.7389439828464218,
+   "auprc": 0.897967482378136
+  },
+  "baseline + RESAMPLE": {
+   "columns": [
+    "base.len_bytes",
+    "base.len_sentences",
+    "base.len_words",
+    "base.novel_1gram",
+    "base.novel_2gram",
+    "base.novel_3gram",
+    "base.novel_4gram",
+    "base.rougeL_f",
+    "base.rougeL_precision",
+    "base.rougeL_recall",
+    "base.position",
+    "resample.ncd_gzip",
+    "resample.ncd_zstd",
+    "sc.nli",
+    "resample.cov_k1",
+    "resample.cov_k1024",
+    "resample.cov_k128",
+    "resample.cov_k16",
+    "resample.cov_k2",
+    "resample.cov_k256",
+    "resample.cov_k32",
+    "resample.cov_k4",
+    "resample.cov_k512",
+    "resample.cov_k64",
+    "resample.cov_k8",
+    "resample.lcs",
+    "resample.lcs_frac",
+    "resample.mlen_entropy",
+    "resample.rlz_phrases",
+    "resample.rlz_phrases_per_symbol"
+   ],
+   "selected": {
+    "kind": "logistic",
+    "C": 3.0
+   },
+   "log_loss_dev_select": 0.33585342167308885,
+   "auroc": 0.7176360225140713,
+   "auprc": 0.889032205181193
+  },
+  "baseline with passage length": {
+   "columns": [
+    "base.len_bytes",
+    "base.len_sentences",
+    "base.len_words",
+    "base.novel_1gram",
+    "base.novel_2gram",
+    "base.novel_3gram",
+    "base.novel_4gram",
+    "base.rougeL_f",
+    "base.rougeL_precision",
+    "base.rougeL_recall",
+    "base.position",
+    "resample.ncd_gzip",
+    "resample.ncd_zstd",
+    "sc.nli",
+    "base.n_sentences"
+   ],
+   "selected": {
+    "kind": "logistic",
+    "C": 30.0
+   },
+   "log_loss_dev_select": 0.3359712562324886,
+   "auroc": 0.7443044760117931,
+   "auprc": 0.9010156063403969
+  },
+  "baseline with passage length + RESAMPLE": {
+   "columns": [
+    "base.len_bytes",
+    "base.len_sentences",
+    "base.len_words",
+    "base.novel_1gram",
+    "base.novel_2gram",
+    "base.novel_3gram",
+    "base.novel_4gram",
+    "base.rougeL_f",
+    "base.rougeL_precision",
+    "base.rougeL_recall",
+    "base.position",
+    "resample.ncd_gzip",
+    "resample.ncd_zstd",
+    "sc.nli",
+    "base.n_sentences",
+    "resample.cov_k1",
+    "resample.cov_k1024",
+    "resample.cov_k128",
+    "resample.cov_k16",
+    "resample.cov_k2",
+    "resample.cov_k256",
+    "resample.cov_k32",
+    "resample.cov_k4",
+    "resample.cov_k512",
+    "resample.cov_k64",
+    "resample.cov_k8",
+    "resample.lcs",
+    "resample.lcs_frac",
+    "resample.mlen_entropy",
+    "resample.rlz_phrases",
+    "resample.rlz_phrases_per_symbol"
+   ],
+   "selected": {
+    "kind": "logistic",
+    "C": 3.0
+   },
+   "log_loss_dev_select": 0.33378917870163416,
+   "auroc": 0.7173679978558027,
+   "auprc": 0.8899026298665031
+  }
+ },
+ "difference": {
+  "pre-registered": {
+   "first": "baseline",
+   "second": "baseline + RESAMPLE",
+   "bootstrap_draws": 10000,
+   "draws_skipped_for_one_class": 0,
+   "auroc": {
+    "first": 0.7389439828464218,
+    "second": 0.7176360225140713,
+    "difference": -0.021307960332350495,
+    "low": -0.0650758796491969,
+    "high": 0.01889699507498429
+   },
+   "auprc": {
+    "first": 0.897967482378136,
+    "second": 0.889032205181193,
+    "difference": -0.008935277196942981,
+    "low": -0.04449565036844259,
+    "high": 0.015311018189439007
+   }
+  },
+  "exploratory, with passage length": {
+   "first": "baseline with passage length",
+   "second": "baseline with passage length + RESAMPLE",
+   "bootstrap_draws": 10000,
+   "draws_skipped_for_one_class": 0,
+   "auroc": {
+    "first": 0.7443044760117931,
+    "second": 0.7173679978558027,
+    "difference": -0.026936478155990318,
+    "low": -0.07389010755340124,
+    "high": 0.01541982057751621
+   },
+   "auprc": {
+    "first": 0.9010156063403969,
+    "second": 0.8899026298665031,
+    "difference": -0.011112976473893754,
+    "low": -0.04868481674852034,
+    "high": 0.015434442871868863
+   }
+  }
+ },
+ "single_scores": {
+  "base.len_bytes": {
+   "auroc": 0.4615384615384615,
+   "auprc": 0.8146485364567847
+  },
+  "base.len_sentences": {
+   "auroc": 0.5042883945322971,
+   "auprc": 0.8194946361387073
+  },
+  "base.len_words": {
+   "auroc": 0.4672339855266684,
+   "auprc": 0.8230144686628772
+  },
+  "base.n_sentences": {
+   "auroc": 0.5718306084159743,
+   "auprc": 0.8565102438237677
+  },
+  "base.novel_1gram": {
+   "auroc": 0.5967569016349504,
+   "auprc": 0.8455006838063817
+  },
+  "base.novel_2gram": {
+   "auroc": 0.6307960332350576,
+   "auprc": 0.8594716467812138
+  },
+  "base.novel_3gram": {
+   "auroc": 0.6349504154382203,
+   "auprc": 0.8575316346023973
+  },
+  "base.novel_4gram": {
+   "auroc": 0.6342803537925489,
+   "auprc": 0.8513201892417728
+  },
+  "base.position": {
+   "auroc": 0.5885151433931921,
+   "auprc": 0.8654989538717354
+  },
+  "base.random": {
+   "auroc": 0.5221120343071562,
+   "auprc": 0.8456348918391398
+  },
+  "base.rougeL_f": {
+   "auroc": 0.41356204770838917,
+   "auprc": 0.770682174782142
+  },
+  "base.rougeL_precision": {
+   "auroc": 0.3861565264004288,
+   "auprc": 0.7481426446445131
+  },
+  "base.rougeL_recall": {
+   "auroc": 0.41403109086035916,
+   "auprc": 0.7718761289242099
+  },
+  "resample.cov_k1": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "resample.cov_k1024": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "resample.cov_k128": {
+   "auroc": 0.4634146341463415,
+   "auprc": 0.8161434977578476
+  },
+  "resample.cov_k16": {
+   "auroc": 0.3580809434467971,
+   "auprc": 0.7291742395101685
+  },
+  "resample.cov_k2": {
+   "auroc": 0.502412221924417,
+   "auprc": 0.8171161283097925
+  },
+  "resample.cov_k256": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "resample.cov_k32": {
+   "auroc": 0.32906727418922543,
+   "auprc": 0.7301366171100417
+  },
+  "resample.cov_k4": {
+   "auroc": 0.3817341195389976,
+   "auprc": 0.7652028986395353
+  },
+  "resample.cov_k512": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "resample.cov_k64": {
+   "auroc": 0.42535513267220587,
+   "auprc": 0.7928627814504862
+  },
+  "resample.cov_k8": {
+   "auroc": 0.35540069686411146,
+   "auprc": 0.7484372143141619
+  },
+  "resample.lcs": {
+   "auroc": 0.3784508174752077,
+   "auprc": 0.7442237399384324
+  },
+  "resample.lcs_frac": {
+   "auroc": 0.3818011257035647,
+   "auprc": 0.7325879427076752
+  },
+  "resample.mlen_entropy": {
+   "auroc": 0.6401768962744573,
+   "auprc": 0.8636285436343566
+  },
+  "resample.ncd_gzip": {
+   "auroc": 0.6199410345751809,
+   "auprc": 0.8581399687774179
+  },
+  "resample.ncd_zstd": {
+   "auroc": 0.6192709729295096,
+   "auprc": 0.8597672519157034
+  },
+  "resample.rlz_phrases": {
+   "auroc": 0.6258375770570892,
+   "auprc": 0.8551949288101974
+  },
+  "resample.rlz_phrases_per_symbol": {
+   "auroc": 0.6474805682122755,
+   "auprc": 0.8634766343374114
+  },
+  "self.cov_k1": {
+   "auroc": 0.4703162690967569,
+   "auprc": 0.8111053211382628
+  },
+  "self.cov_k1024": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "self.cov_k128": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "self.cov_k16": {
+   "auroc": 0.5175556151165908,
+   "auprc": 0.8202783558885416
+  },
+  "self.cov_k2": {
+   "auroc": 0.506231573304744,
+   "auprc": 0.8290172950494451
+  },
+  "self.cov_k256": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "self.cov_k32": {
+   "auroc": 0.5027472527472527,
+   "auprc": 0.8171536983196176
+  },
+  "self.cov_k4": {
+   "auroc": 0.5176226212811579,
+   "auprc": 0.8296748442147953
+  },
+  "self.cov_k512": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "self.cov_k64": {
+   "auroc": 0.5,
+   "auprc": 0.8161434977578476
+  },
+  "self.cov_k8": {
+   "auroc": 0.5160814794961137,
+   "auprc": 0.8285745300895151
+  },
+  "self.lcs": {
+   "auroc": 0.517220584293755,
+   "auprc": 0.8323544181906464
+  },
+  "self.lcs_frac": {
+   "auroc": 0.5590324309836504,
+   "auprc": 0.8473227859031408
+  },
+  "self.mlen_entropy": {
+   "auroc": 0.45832216563923883,
+   "auprc": 0.7879962423292591
+  },
+  "self.rlz_phrases": {
+   "auroc": 0.446931117662825,
+   "auprc": 0.7975389358727748
+  },
+  "self.rlz_phrases_per_symbol": {
+   "auroc": 0.4944384883409274,
+   "auprc": 0.81027567673324
+  },
+  "sc.nli": {
+   "auroc": 0.8040739748056821,
+   "auprc": 0.9384965544442162
+  }
+ }
+}

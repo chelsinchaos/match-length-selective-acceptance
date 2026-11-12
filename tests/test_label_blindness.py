@@ -32,16 +32,18 @@ import selfref.groundedness
 import selfref.matchlen
 import selfref.ncd
 import selfref.selfcheck
+import selfref.tokens
 from selfref.extract import FeatureInput, extract_features
 
 # Every module that computes a score from an item: the features under test and the baselines.
 FEATURE_MODULES = [selfref.matchlen, selfref.features, selfref.ncd, selfref.extract,
-                   selfref.baselines, selfref.groundedness, selfref.selfcheck]
+                   selfref.baselines, selfref.groundedness, selfref.selfcheck,
+                   selfref.tokens]
 FORBIDDEN = ("label", "loss", "gold", "truth", "target_y", "halluc", "annotat")
 ALLOWED_IMPORTS = {"__future__", "dataclasses", "gzip", "math", "operator", "pathlib", "re",
                    "statistics", "typing", "zstandard", "numpy",
                    "nltk", "nltk.tokenize", "torch", "transformers",
-                   "selfref.matchlen", "selfref.features", "selfref.ncd"}
+                   "selfref.matchlen", "selfref.features", "selfref.ncd", "selfref.baselines"}
 
 
 # ------------------------------------------------------------------ interface

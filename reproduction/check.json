@@ -1,0 +1,156 @@
+{
+ "provenance": {
+  "git_commit": "1e6bafa07a0eb8484c44c13eb9f24677f91c8183",
+  "git_dirty": true
+ },
+ "reference": "16b2e0d9666521ae28eba34555ebee6c5bfacfef",
+ "ignored": [
+  "cpu_scores",
+  "environment",
+  "ledger",
+  "ledger_entries",
+  "megabytes",
+  "neural_baselines",
+  "provenance",
+  "seconds",
+  "seconds_per_megabyte",
+  "model_sha256 (compared apart)"
+ ],
+ "records": [
+  {
+   "record": "confirmatory/result.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/acceptance_overlap.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/paraphrase.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/rehearsal.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/result.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/runtime.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/wikibio_rehearsal.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "controls/wikibio_result.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/aa.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/bar_floor.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/baseline.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/exploratory_design.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/fidelity.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/power.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/power_small_gains.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/profile.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  },
+  {
+   "record": "prereg/rehearsal.json",
+   "first_difference": null,
+   "model_hash_differs": false
+  }
+ ],
+ "records_compared": 17,
+ "records_identical": 17,
+ "records_identical_with_a_different_model_hash": 0,
+ "ledger_rows_at_the_reference": 5,
+ "sealed_reads_by_the_reproduction": {
+  "CAL": 2,
+  "TEST": 3,
+  "rows": [
+   {
+    "number": "6",
+    "time_utc": "2026-11-12T15:21:25Z",
+    "split": "CAL",
+    "access_to_this_split": "3",
+    "commit": "861eb915f00f927877a446e3686be6a5caf5d7dc",
+    "purpose": "reproduction of the confirmatory run"
+   },
+   {
+    "number": "7",
+    "time_utc": "2026-11-12T15:21:25Z",
+    "split": "TEST",
+    "access_to_this_split": "4",
+    "commit": "861eb915f00f927877a446e3686be6a5caf5d7dc",
+    "purpose": "reproduction of the confirmatory run"
+   },
+   {
+    "number": "8",
+    "time_utc": "2026-11-12T15:23:05Z",
+    "split": "CAL",
+    "access_to_this_split": "4",
+    "commit": "34922a434229c941dc842d806ebff7898a70a95c",
+    "purpose": "reproduction of the controls and secondary metrics"
+   },
+   {
+    "number": "9",
+    "time_utc": "2026-11-12T15:23:05Z",
+    "split": "TEST",
+    "access_to_this_split": "5",
+    "commit": "34922a434229c941dc842d806ebff7898a70a95c",
+    "purpose": "reproduction of the controls and secondary metrics"
+   },
+   {
+    "number": "10",
+    "time_utc": "2026-11-12T15:27:02Z",
+    "split": "TEST",
+    "access_to_this_split": "6",
+    "commit": "1e6bafa07a0eb8484c44c13eb9f24677f91c8183",
+    "purpose": "reproduction of the WikiBio ranking analysis"
+   }
+  ]
+ }
+}

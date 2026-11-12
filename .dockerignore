@@ -1,0 +1,9 @@
+.venv
+data
+results
+vendor
+fastcodec_backend
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.hypothesis

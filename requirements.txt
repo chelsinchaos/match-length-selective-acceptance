@@ -5,7 +5,7 @@
 # compiled extensions there (`import scipy.stats` fails in dyld), and selcert
 # needs scipy.stats.
 #
-# A fully locked environment and a Dockerfile arrive in Phase 5.
+# The fully locked environment is requirements.lock; the container definition is Dockerfile.
 numpy==2.4.6
 scipy==1.17.1
 zstandard==0.23.0
@@ -20,3 +20,6 @@ transformers==4.57.3
 sentencepiece==0.2.0
 protobuf==5.29.3
 nltk==3.9.2
+
+# Phase 5: figures of the report.
+matplotlib==3.10.7

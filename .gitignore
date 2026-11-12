@@ -15,3 +15,7 @@ __pycache__/
 
 # The harness virtual environment (make venv).
 .venv/
+
+# The paper and its figures are tracked, even where a parent repository ignores PDFs.
+!paper/paper.pdf
+!paper/figures/*.pdf
